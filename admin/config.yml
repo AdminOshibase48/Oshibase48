@@ -1,3 +1,4 @@
+backend:
   name: git-gateway
   branch: main
 
@@ -11,9 +12,15 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Image"
+        name: "image"
+        widget: "image"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
   - name: "news"
     label: "News"
@@ -21,8 +28,12 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
   - name: "schedule"
     label: "Schedule"
@@ -30,5 +41,9 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Event", name: "event", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Event"
+        name: "event"
+        widget: "string"
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
