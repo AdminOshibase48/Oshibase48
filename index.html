@@ -1,24 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient(
+    "https://nuvfnnxuxtthbryesliu.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes"
+  );
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Oshibase48</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Oshibase48</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery/index.html">Gallery</a>
-      <a href="news/index.html">News</a>
-      <a href="schedule/index.html">Schedule</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome to Oshibase48</h2>
-    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
-  </main>
-  <footer>&copy; 2025 Oshibase48</footer>
-</body>
-</html>
+  async function loadNews() {
+    const { data, error } = await supabase
+      .from('news')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    const container = document.getElementById("news-section");
+    container.innerHTML = data.map(item => `
+      <div class="news-item">
+        <h3>${item.title}</h3>
+        <p>${item.body}</p>
+      </div>
+    `).join('');
+  }
+
+  loadNews();
+</script>
