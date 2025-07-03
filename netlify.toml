@@ -1,0 +1,18 @@
+
+[[redirects]]
+  from = "/.netlify/identity/verify"
+  to = "/admin/redirect.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/.netlify/identity/confirm"
+  to = "/admin/redirect.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/.netlify/identity/token"
+  to = "/admin/redirect.html"
+  status = 302
+  force = true
