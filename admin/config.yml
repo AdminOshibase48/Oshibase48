@@ -1,0 +1,37 @@
+
+backend:
+  name: git-gateway
+  branch: main
+  login_url: /admin/redirect.html
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "news"
+    label: "News"
+    folder: "news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "schedule"
+    label: "Schedule"
+    folder: "schedule"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Event", name: "event", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
