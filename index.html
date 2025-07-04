@@ -2,144 +2,59 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oshibase48 - Rumah Para Wota</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fbfd;
-      color: #1e293b;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    header .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #1d4ed8;
-    }
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #1e293b;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: #1d4ed8;
-    }
-    .hero {
-      padding: 100px 40px 60px;
-      text-align: center;
-      background: linear-gradient(to right, #e0ecff, #f9faff);
-      animation: fadeIn 1s ease-in-out;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero .buttons {
-      margin-top: 30px;
-    }
-    .hero .buttons a {
-      padding: 12px 24px;
-      margin: 0 10px;
-      background-color: #1d4ed8;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .hero .buttons a.secondary {
-      background-color: #e2e8f0;
-      color: #1e293b;
-    }
-    .hero .buttons a:hover {
-      background-color: #2563eb;
-    }
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      padding: 60px 20px;
-      background-color: #fff;
-    }
-    .stat {
-      text-align: center;
-    }
-    .stat i {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #1d4ed8;
-    }
-    .stat h3 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .stat p {
-      color: #6b7280;
-    }
-    @keyframes fadeIn {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oshibase48 | Rumah Para Wota</title>
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Logo -->
+  <link rel="icon" href="assets/img/logo.png" />
+
+  <!-- Supabase -->
+  <script type="module" src="assets/js/supabaseClient.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="logo">🔵 Oshibase48</div>
-    <nav>
+  <header class="header">
+    <img src="assets/img/logo.png" alt="Logo Oshibase48" class="logo" />
+    <nav class="nav">
       <a href="#galeri">Galeri</a>
       <a href="#berita">Berita</a>
       <a href="#jadwal">Jadwal</a>
-      <a href="/admin">Admin</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Selamat Datang di OSHIBASE48</h1>
-    <p>Platform komunitas untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama dengan sesama wota JKT48!</p>
-    <div class="buttons">
-      <a href="#galeri">Lihat Galeri</a>
-      <a class="secondary" href="#berita">Berita Komunitas</a>
-    </div>
+  <section class="hero" data-aos="fade-up">
+    <h1>Selamat datang di <span>Oshibase48</span></h1>
+    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
   </section>
 
-  <section class="stats">
-    <div class="stat">
-      <i class="fa-solid fa-users"></i>
-      <h3>1.000+</h3>
-      <p>Member Wota</p>
-    </div>
-    <div class="stat">
-      <i class="fa-solid fa-camera"></i>
-      <h3>500+</h3>
-      <p>Dokumentasi Galeri</p>
-    </div>
-    <div class="stat">
-      <i class="fa-solid fa-newspaper"></i>
-      <h3>200+</h3>
-      <p>Berita Komunitas</p>
-    </div>
-    <div class="stat">
-      <i class="fa-solid fa-calendar-check"></i>
-      <h3>24/7</h3>
-      <p>Update Jadwal</p>
-    </div>
+  <section id="galeri" class="section" data-aos="fade-up">
+    <h2>📸 Galeri Komunitas</h2>
+    <div id="galeri-list" class="grid"></div>
   </section>
+
+  <section id="berita" class="section" data-aos="fade-up">
+    <h2>📰 Berita Terbaru</h2>
+    <div id="berita-list" class="grid"></div>
+  </section>
+
+  <section id="jadwal" class="section" data-aos="fade-up">
+    <h2>📅 Jadwal JKT48</h2>
+    <div id="jadwal-list" class="grid"></div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Oshibase48. Dibuat dengan ❤️ untuk Wota.</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
