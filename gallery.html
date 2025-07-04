@@ -1,49 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Galeri Komunitas - Oshibase48</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <title>Galeri Komunitas</title>
+  <script type="module" src="js/galeri.js" defer></script>
 </head>
 <body>
-<header>
-<h1>Galeri Komunitas</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
-<a href="news.html">News</a>
-<a href="schedule.html">Schedule</a>
-</nav>
-</header>
-<main id="gallery"></main>
-<footer>
-<p>© 2025 Oshibase48</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-fetch("gallery")
-.then(res => res.text())
-.then(async html => {
-const parser = new DOMParser();
-const files = html.match(/href=".*?\.md"/g);
-const container = document.getElementById("gallery");
-for (const file of files) {
-const url = file.split('"')[1];
-const content = await fetch(url).then(res => res.text());
-const title = content.match(/title:\s*(.+)/)[1];
-const image = content.match(/image:\s*(.+)/)[1];
-const body = content.split("---").pop();
-const htmlBody = marked.parse(body);
-container.innerHTML += `
-<div class="card">
-<img src="${image}" alt="${title}" />
-<h3>${title}</h3>
-<div>${htmlBody}</div>
-</div>
-`;
-}
-});
-</script>
+  <h1>Galeri Kegiatan OSHIBASE48</h1>
+  <div id="galeri-container"></div>
 </body>
 </html>
