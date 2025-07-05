@@ -3,17 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OSHIBASE48 - Komunitas Wota</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>OSHIBASE48</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0faff;
+      color: #111;
+    }
+
+    header {
+      background: #3b82f6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo img {
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      display: none;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #3b82f6;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .section, .welcome {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .welcome {
+      background: #e0f2fe;
+    }
+
+    .welcome h1 {
+      color: #1d4ed8;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    .section p {
+      color: #333;
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    .social a:hover {
+      color: #60a5fa;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="assets/img/logo.png" alt="OSHIBASE48 Logo">
+      <img src="assets/img/logo.png" alt="OSHIBASE48" />
     </div>
     <div class="hamburger" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
@@ -25,54 +131,45 @@
     </nav>
   </header>
 
-  <!-- Welcome Section -->
+  <!-- WELCOME -->
   <section class="welcome" data-aos="fade-up">
     <h1>Selamat Datang di OSHIBASE48</h1>
-    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
+    <p>Rumah komunitas wota untuk berdiskusi, berbagi, dan mendukung JKT48 bersama-sama.</p>
   </section>
 
-  <!-- Galeri -->
+  <!-- GALERI -->
   <section class="section" id="galeri" data-aos="fade-up">
     <h2>Galeri Komunitas</h2>
-    <p>Dokumentasi foto-foto kegiatan seru komunitas OSHIBASE48</p>
+    <p>Lihat momen terbaik dari kegiatan komunitas OSHIBASE48.</p>
   </section>
 
-  <!-- Berita -->
+  <!-- BERITA -->
   <section class="section" id="berita" data-aos="fade-up">
-    <h2>Berita Komunitas</h2>
-    <p>Informasi dan pengumuman terbaru seputar komunitas kami.</p>
+    <h2>Berita Terbaru</h2>
+    <p>Info dan pengumuman penting seputar komunitas & idol kesayanganmu.</p>
   </section>
 
-  <!-- Jadwal -->
+  <!-- JADWAL -->
   <section class="section" id="jadwal" data-aos="fade-up">
-    <h2>Jadwal JKT48</h2>
-    <p>Jangan lewatkan jadwal event penting dari JKT48 dan OSHIBASE48!</p>
+    <h2>Jadwal Event</h2>
+    <p>Simak jadwal terbaru JKT48 dan kegiatan komunitas.</p>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 OSHIBASE48</p>
     <div class="social">
-      <a href="https://www.instagram.com/oshibase48._/" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="https://oshibase48.netlify.app/" target="_blank">
-        <i class="fas fa-globe"></i>
-      </a>
+      <a href="https://www.instagram.com/oshibase48._/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://oshibase48.netlify.app" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
     function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("show");
+      document.getElementById('navLinks').classList.toggle('show');
     }
   </script>
 </body>
