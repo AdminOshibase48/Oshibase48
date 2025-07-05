@@ -1,60 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oshibase48 | Rumah Para Wota</title>
-
-  <!-- AOS Animation CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-  <!-- Logo -->
-  <link rel="icon" href="assets/img/logo.png" />
-
-  <!-- Supabase -->
-  <script type="module" src="assets/js/supabaseClient.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oshibase48 - Komunitas Wota</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <img src="assets/img/logo.png" alt="Logo Oshibase48" class="logo" />
-    <nav class="nav">
-      <a href="#galeri">Galeri</a>
-      <a href="#berita">Berita</a>
-      <a href="#jadwal">Jadwal</a>
-    </nav>
+  <header class="hero" data-aos="fade-down">
+    <img src="assets/img/oshibase-logo.png" alt="Oshibase48 Logo" class="logo" />
+    <h1>Selamat Datang di OSHIBASE48</h1>
+    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Selamat datang di <span>Oshibase48</span></h1>
-    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
+  <!-- Section Galeri -->
+  <section class="section" id="galeri" data-aos="fade-up">
+    <h2>Galeri Komunitas</h2>
+    <div id="galeri-preview" class="grid"></div>
+    <a href="pages/galeri.html" class="btn">Lihat Semua Galeri</a>
   </section>
 
-  <section id="galeri" class="section" data-aos="fade-up">
-    <h2>📸 Galeri Komunitas</h2>
-    <div id="galeri-list" class="grid"></div>
+  <!-- Section Berita -->
+  <section class="section" id="berita" data-aos="fade-up">
+    <h2>Berita Terbaru</h2>
+    <div id="berita-preview" class="grid"></div>
+    <a href="pages/berita.html" class="btn">Lihat Semua Berita</a>
   </section>
 
-  <section id="berita" class="section" data-aos="fade-up">
-    <h2>📰 Berita Terbaru</h2>
-    <div id="berita-list" class="grid"></div>
+  <!-- Section Jadwal -->
+  <section class="section" id="jadwal" data-aos="fade-up">
+    <h2>Jadwal JKT48 & Event</h2>
+    <div id="jadwal-preview" class="grid"></div>
+    <a href="pages/jadwal.html" class="btn">Lihat Semua Jadwal</a>
   </section>
 
-  <section id="jadwal" class="section" data-aos="fade-up">
-    <h2>📅 Jadwal JKT48</h2>
-    <div id="jadwal-list" class="grid"></div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Oshibase48. Dibuat untuk Wota.</p>
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 OSHIBASE48 Community</p>
   </footer>
 
-  <!-- AOS JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="module" src="assets/js/index.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
