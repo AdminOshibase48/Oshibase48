@@ -1,4 +1,41 @@
-<section id="berita-preview">
-  <h2 data-aos="fade-up">Berita Terbaru</h2>
-  <div class="berita-list" id="berita-content"></div>
-</section>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Berita Oshibase48</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+  <header>
+    <h1 class="logo">Oshibase48</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="jadwal.html">Jadwal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="berita" data-aos="fade-up">
+    <h2>Berita Terbaru</h2>
+    <div id="berita-list" class="berita-list"></div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Oshibase48</div>
+    <div class="sosmed">
+      <a href="https://instagram.com/oshibase48._">Instagram</a> |
+      <a href="https://www.tiktok.com/@oshibase48ofc">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="berita.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
