@@ -1,79 +1,159 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oshibase48 - Komunitas Wota JKT48</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSHIBASE48 - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ecf5ff;
+      color: #333;
+    }
+
+    header {
+      background-color: #3b82f6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      background: #ffffff;
+      display: none;
+      flex-direction: column;
+      padding: 10px 20px;
+      border-bottom: 2px solid #d1e7ff;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1e3a8a;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('https://i.ibb.co/2KgdXb5/bg-oshis.jpg') no-repeat center;
+      background-size: cover;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #1d4ed8;
+    }
+
+    footer {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        background: transparent;
+        border: none;
+      }
+      nav a {
+        margin: 0 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <div class="logo-title">
-      <img src="assets/img/oshibase-logo.png" alt="Oshibase48" class="logo">
-      <h1>Oshibase48</h1>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Logo OSHIBASE48">
+      <strong>OSHIBASE48</strong>
     </div>
-    <nav>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <ul id="nav-menu">
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#galeri">Galeri</a></li>
-        <li><a href="#berita">Berita</a></li>
-        <li><a href="#jadwal">Jadwal</a></li>
-      </ul>
-    </nav>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
   </header>
 
-  <!-- SECTION: TENTANG -->
-  <section id="tentang" class="section" data-aos="fade-up">
-    <h2>Tentang OSHIBASE48</h2>
-    <p>OSHIBASE48 adalah rumah bagi para Wota JKT48 untuk berkumpul, berdiskusi, dan mendukung oshimen tercinta bersama-sama. Kami adalah komunitas terbuka, ramah, dan penuh semangat!</p>
+  <nav id="mobileMenu">
+    <a href="galeri.html">Galeri</a>
+    <a href="berita.html">Berita</a>
+    <a href="jadwal.html">Jadwal</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Selamat Datang di OSHIBASE48</h1>
+    <p>Komunitas wota yang seru, kreatif, dan selalu mendukung oshimen tercinta! Bergabung dan tunjukkan semangatmu!</p>
   </section>
 
-  <!-- SECTION: GALERI -->
-  <section id="galeri" class="section" data-aos="fade-up">
-    <h2>Galeri Kegiatan</h2>
-    <p>Lihat momen kebersamaan kami dalam berbagai event dan gathering.</p>
-    <a href="galeri/galeri.html" class="btn">Lihat Galeri</a>
+  <section class="section">
+    <h2>Apa itu OSHIBASE48?</h2>
+    <p style="text-align:center;">OSHIBASE48 adalah rumah bagi para fans JKT48 untuk saling terhubung, berbagi konten, dan menyebarkan energi positif lewat kegiatan komunitas. Kita punya galeri, berita update, dan jadwal kegiatan favoritmu!</p>
   </section>
 
-  <!-- SECTION: BERITA -->
-  <section id="berita" class="section" data-aos="fade-up">
-    <h2>Berita Komunitas</h2>
-    <p>Update terbaru seputar komunitas OSHIBASE48 dan JKT48.</p>
-    <a href="berita/berita.html" class="btn">Baca Berita</a>
-  </section>
-
-  <!-- SECTION: JADWAL -->
-  <section id="jadwal" class="section" data-aos="fade-up">
-    <h2>Jadwal JKT48</h2>
-    <p>Jangan lewatkan kegiatan JKT48 dan agenda komunitas kami.</p>
-    <a href="jadwal/jadwal.html" class="btn">Lihat Jadwal</a>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="sosmed">
-      <a href="https://www.instagram.com/oshibase48._/" target="_blank">
-        <img src="assets/img/ig-icon.png" alt="Instagram">
-      </a>
-      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank">
-        <img src="assets/img/tiktok-icon.png" alt="TikTok">
-      </a>
-     <a href="https://oshibase48.netlify.app/" target="_blank">
-        <img src="assets/img/web-icon.png" alt="Web">
-      </a>
-    </div>
-    <p>&copy; 2025 OSHIBASE48</p>
+    <p>© 2025 OSHIBASE48</p>
+    <a href="https://www.instagram.com/oshibase48._/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    href="https://www.tiktok.com/@oshibase48ofc" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    href="https://https://oshibase48.netlify.app/" target="_blank"><i class="fab fa-Web"></i> Web</a>
   </footer>
 
   <script>
-    AOS.init();
     function toggleMenu() {
-      const menu = document.getElementById("nav-menu");
-      menu.classList.toggle("show");
+      const nav = document.getElementById('mobileMenu');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     }
   </script>
+
 </body>
 </html>
