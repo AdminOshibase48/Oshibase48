@@ -1,267 +1,286 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Oshibase48 - Komunitas Wota</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSHIBASE48 - Komunitas Wota</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
-      --bg-light: #f5faff;
-      --text-light: #1e3a8a;
-      --bg-dark: #0f172a;
-      --text-dark: #f1f5f9;
-      --accent: #1e40af;
+      --primary-color: #3b82f6;
+      --bg-color: #ffffff;
+      --text-color: #111827;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e293b;
+      --text-color: #f1f5f9;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
     }
 
     header {
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #ffffff;
+      color: var(--text-color);
       padding: 16px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .logo-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
 
-    .logo-container img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .logo-container span {
-      font-weight: bold;
-      font-size: 20px;
-      color: var(--text-light);
-    }
-
-    body.dark-mode .logo-container span {
-      color: var(--text-dark);
-    }
-
-    .toggle-mode {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    nav#nav-menu {
-      display: none;
-    }
-
-    .hamburger {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      margin-left: 10px;
-      color: var(--accent);
-    }
-
-    nav#nav-menu.active {
+    .logo {
       display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 36px;
+    }
+
+    nav {
+      display: none;
       flex-direction: column;
       position: absolute;
-      top: 70px;
+      top: 60px;
       right: 20px;
       background: white;
-      padding: 12px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      z-index: 999;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     nav a {
+      padding: 10px 20px;
+      color: #1e3a8a;
       text-decoration: none;
-      color: var(--text-light);
-      padding: 8px;
-      font-weight: 600;
     }
 
-    body.dark-mode nav a {
-      color: var(--text-dark);
+    .menu-toggle {
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    section {
-      padding: 50px 20px;
+    main {
+      padding: 100px 20px 40px;
       max-width: 900px;
       margin: auto;
     }
 
-    section h2 {
+    .hero {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
     }
 
-    section p {
-      text-align: center;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    section img {
-      display: block;
-      margin: 30px auto;
+    .hero img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
       border-radius: 12px;
-      width: 200px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 14px;
+      cursor: pointer;
+      z-index: 1000;
     }
 
     footer {
-      background-color: var(--accent);
-      color: white;
+      margin-top: 60px;
+      background: #f0f4ff;
+      padding: 30px 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      padding: 30px 20px;
+      align-items: flex-start;
+      gap: 20px;
     }
 
-    .footer-left {
+    footer .left {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      flex: 1 1 300px;
     }
 
-    .footer-left img {
+    footer .left img {
       height: 40px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .footer-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      flex: 1 1 300px;
+    footer .left p {
+      margin: 0;
+      font-size: 14px;
     }
 
-    .footer-right a {
-      color: white;
-      font-size: 20px;
-      margin-left: 12px;
+    footer .right {
+      text-align: right;
     }
 
-    .footer-right p {
-      margin-top: 10px;
+    footer .right a {
+      display: block;
+      color: #1e3a8a;
+      text-decoration: none;
+      margin-bottom: 6px;
+      font-size: 14px;
     }
 
-    @media(min-width: 768px) {
-      nav#nav-menu {
+    footer .right a i {
+      margin-right: 6px;
+    }
+
+    @media (min-width: 768px) {
+      nav {
         display: flex !important;
-        flex-direction: row;
         position: static;
-        gap: 20px;
+        flex-direction: row;
         background: none;
         box-shadow: none;
       }
 
-      .hamburger {
-        display: none;
+      nav a {
+        margin-left: 20px;
       }
 
-      .footer-left, .footer-right {
-        align-items: center;
+      .menu-toggle {
+        display: none;
       }
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
+
   <header>
-    <div class="logo-container">
-      <img src="assets/img/logo.png" alt="Logo">
-      <span>Oshibase48</span>
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="OSHIBASE48 Logo">
+      <strong>OSHIBASE48</strong>
     </div>
-    <div style="display: flex; align-items: center;">
-      <button class="toggle-mode" onclick="toggleMode()">☀️ / 🌙</button>
-      <button class="hamburger" onclick="toggleMenu()">☰</button>
-    </div>
-    <nav id="nav-menu">
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    <nav id="navMenu">
       <a href="#galeri">Galeri</a>
-      <a href="#berita">Berita</a>
-      <a href="#jadwal">Jadwal</a>
+      <a href="#">Berita</a>
+      <a href="#">Jadwal</a>
     </nav>
   </header>
 
-  <!-- Welcome Section -->
-  <section data-aos="fade-up">
-    <h2>Selamat Datang di OSHIBASE48</h2>
-    <p>
-      Kami adalah komunitas wota yang berdedikasi mendukung JKT48 dengan semangat kebersamaan dan kreativitas.
-    </p>
-    <img src="assets/img/perkenalan.png" alt="Oshibase Banner">
-  </section>
-
-  <!-- Galeri -->
-  <section id="galeri" data-aos="fade-up">
-    <h2>📸 Galeri</h2>
-    <p>Dokumentasi momen bersama komunitas Oshibase48.</p>
-  </section>
-
-  <!-- Berita -->
-  <section id="berita" data-aos="fade-up">
-    <h2>📰 Berita</h2>
-    <p>Update terkini seputar JKT48 dan aktivitas komunitas kami.</p>
-  </section>
-
-  <!-- Jadwal -->
-  <section id="jadwal" data-aos="fade-up">
-    <h2>📅 Jadwal</h2>
-    <p>Cek jadwal teater JKT48 dan agenda komunitas OSHIBASE48.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-left">
-      <img src="assets/img/logo.png" alt="Logo Kecil">
-      <p><strong>Oshibase48</strong></p>
-      <p>Satu basis, sejuta dukungan untuk oshimen!</p>
+  <main>
+    <div class="hero" data-aos="fade-up">
+      <img src="https://source.unsplash.com/900x300/?jkt48,idol" alt="OSHIBASE48 Banner">
+      <h2>Selamat Datang di OSHIBASE48</h2>
+      <p>Komunitas wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
     </div>
-    <div class="footer-right">
-      <div>
-        <a href="https://www.instagram.com/oshibase48._/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank"><i class="fab fa-tiktok"></i></a>
-      </div>
-      <p><a href="mailto:oshibase48.ofc@gmail.com" style="color:white; text-decoration: underline;">Kontak: oshibase48.ofc@gmail.com</a></p>
+
+    <section id="galeri" data-aos="fade-up">
+      <h3>Galeri Komunitas</h3>
+      <div id="gallery" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="left">
+      <img src="assets/img/logo.png" alt="Logo" />
+      <p>OSHIBASE48 - Bersatu Dalam Dukungan</p>
+    </div>
+    <div class="right">
+      <a href="https://www.instagram.com/oshibase48._/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="mailto:oshibase48.ofc@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
     </div>
   </footer>
 
-  <!-- Script -->
+  <button class="toggle-mode" onclick="toggleMode()">🌙 Dark Mode</button>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    const supabase = createClient(
+      'https://nuvfnnxuxtthbryesliu.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes'
+    );
+
+    async function loadGaleri() {
+      const { data, error } = await supabase
+        .from('galeri')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      const gallery = document.getElementById('gallery');
+      if (!data || error) {
+        gallery.innerHTML = "<p>Galeri gagal dimuat.</p>";
+        return;
+      }
+
+      gallery.innerHTML = '';
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+        card.innerHTML = `
+          <img src="${item.image_url}" alt="${item.title}" />
+          <p><strong>${item.title}</strong></p>
+        `;
+        gallery.appendChild(card);
+      });
+    }
+
+    loadGaleri();
+  </script>
+
+  <script>
+    const toggleMenu = () => {
+      const nav = document.getElementById('navMenu');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function toggleMode() {
+      const html = document.body;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.querySelector('.toggle-mode').textContent = isDark ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+  </script>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
-    function toggleMenu() {
-      document.getElementById('nav-menu').classList.toggle('active');
-    }
   </script>
+
 </body>
 </html>
