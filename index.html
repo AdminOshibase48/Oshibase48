@@ -2,14 +2,37 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oshibase48 - Komunitas Wota</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Fix Logo gepeng */
+    .hero .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    /* Tambahan padding di bawah agar footer tidak ketutupan */
+    body {
+      padding-bottom: 100px;
+    }
+
+    footer {
+      position: relative;
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Hero / Perkenalan -->
   <header class="hero" data-aos="fade-down">
-    <img src="assets/img/oshibase-logo.png" alt="Oshibase48 Logo" class="logo" />
+    <img src="assets/img/oshibase-logo.png" alt="Logo OSHIBASE48" class="logo">
     <h1>Selamat Datang di OSHIBASE48</h1>
     <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
   </header>
@@ -35,10 +58,12 @@
     <a href="pages/jadwal.html" class="btn">Lihat Semua Jadwal</a>
   </section>
 
+  <!-- Footer -->
   <footer data-aos="fade-up">
     <p>&copy; 2025 OSHIBASE48 Community</p>
   </footer>
 
+  <!-- Script AOS + JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="assets/js/index.js"></script>
   <script>AOS.init();</script>
