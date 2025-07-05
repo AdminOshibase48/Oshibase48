@@ -1,161 +1,158 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Oshibase48 - Beranda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oshibase48 - Komunitas Wota</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fbfe;
-      color: #111827;
+      background: #f8faff;
     }
-    header {
-      background-color: white;
+    .logo-container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 14px 24px;
-      border-bottom: 1px solid #ddd;
+      gap: 10px;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 36px;
-      margin-right: 12px;
-    }
-    nav {
-      display: none;
-      flex-direction: column;
-      background: white;
-      position: absolute;
-      top: 60px;
-      right: 24px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-    nav a {
-      padding: 12px 16px;
-      text-decoration: none;
-      color: #1e3a8a;
-    }
-    .hamburger {
-      font-size: 20px;
-      cursor: pointer;
-    }
-    .section {
-      padding: 40px 24px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      color: #1e3a8a;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      padding: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      border-radius: 6px;
-    }
-    footer {
-      background: #1e3a8a;
-      color: white;
-      padding: 30px 24px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    footer .left, footer .right {
-      flex: 1;
-      min-width: 200px;
-    }
-    footer img {
+    .logo-container img {
       height: 32px;
     }
-    footer a {
-      color: white;
-      display: block;
-      margin-bottom: 6px;
-      text-decoration: none;
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
     }
-    .toggle {
-      display: none;
+    .hero h1 {
+      color: #1d3fb3;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 16px;
+      color: #333;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto 0;
+      border-radius: 12px;
+    }
+    footer img.footer-logo-img {
+      height: 32px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/img/logo.png" alt="Oshibase48" />
-      <span><strong>OSHIBASE48</strong></span>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="88e3cbd7-e6c3-47db-9fee-e89679c3c951.png" alt="Logo" />
+      <div class="logo">Oshibase48</div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-<nav id="navMenu">
-  <a href="about.html">About</a>
-  <a href="galeri.html">Galeri</a>
-  <a href="jadwal.html">Jadwal</a>
-  <a href="berita.html">Berita</a>
-</nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav class="site-nav" id="site-nav">
+      <a href="#hero">Beranda</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#berita">Berita</a>
+      <a href="#jadwal">Jadwal</a>
+    </nav>
   </header>
 
-  <section class="section" id="welcome" data-aos="fade-up">
-    <h2>Selamat Datang di Oshibase48</h2>
+  <!-- Hero / Perkenalan -->
+  <section class="hero" id="hero" data-aos="fade-up">
+    <h1>Selamat Datang di Oshibase48</h1>
     <p>Komunitas wota JKT48 tempat kamu berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama!</p>
-    <img src="assets/img/perkenalan.png" alt="Oshibase48 Banner" style="width:100%; border-radius:12px; margin-top:20px;">
+    <img src="oshibase-welcome-pixel.png" alt="Welcome Banner" />
   </section>
 
-  <section class="section" id="galeri" data-aos="fade-up">
-    <h2>Galeri</h2>
-    <div id="galeri-preview" class="cards"></div>
-  </section>
-
-  <section class="section" id="jadwal" data-aos="fade-up">
-    <h2>Jadwal</h2>
-    <div id="jadwal-preview" class="cards"></div>
-  </section>
-
-  <section class="section" id="berita" data-aos="fade-up">
-    <h2>Berita</h2>
-    <div id="berita-preview" class="cards"></div>
-  </section>
-
-  <footer>
-    <div class="left">
-      <img src="assets/img/logo.png" alt="OSHIBASE48" />
-      <p>OSHIBASE48</p>
-      <small>Rumah wota untuk saling support dan berbagi.</small>
+  <!-- Galeri -->
+  <section class="section galeri" id="galeri" data-aos="fade-up">
+    <div class="container">
+      <h1>Galeri Komunitas</h1>
+      <div class="gallery-grid" id="galeri-list"></div>
     </div>
-    <div class="right">
-      <a href="https://www.instagram.com/oshibase48._/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-      <a href="mailto:oshibase48.ofc@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+  </section>
+
+  <!-- Berita -->
+  <section class="section berita" id="berita" data-aos="fade-up">
+    <div class="container">
+      <h1>Berita Terbaru</h1>
+      <div class="berita-list" id="berita-list"></div>
+    </div>
+  </section>
+
+  <!-- Jadwal -->
+  <section class="section jadwal" id="jadwal" data-aos="fade-up">
+    <div class="container">
+      <h1>Jadwal Kegiatan</h1>
+      <ul class="jadwal-list" id="jadwal-list"></ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Oshibase48</div>
+    <img src="88e3cbd7-e6c3-47db-9fee-e89679c3c951.png" alt="Logo Footer" class="footer-logo-img" />
+    <div class="sosmed">
+      <a href="https://instagram.com/oshibase48._" target="_blank">Instagram</a> |
+      <a href="https://tiktok.com/@oshibase48ofc" target="_blank">TikTok</a>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <!-- Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script>
+    AOS.init();
     function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      document.getElementById('site-nav').classList.toggle('active');
     }
+
+    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Galeri
+    async function fetchGaleri() {
+      const { data } = await supabase.from('galeri').select('*').order('created_at', { ascending: false });
+      const container = document.getElementById('galeri-list');
+      data.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.url;
+        img.alt = item.caption || 'Galeri';
+        img.setAttribute("data-aos", "fade-up");
+        container.appendChild(img);
+      });
+    }
+
+    // Berita
+    async function fetchBerita() {
+      const { data } = await supabase.from('berita').select('*').order('created_at', { ascending: false });
+      const container = document.getElementById('berita-list');
+      data.forEach(item => {
+        const div = document.createElement('div');
+        div.className = "berita-item";
+        div.setAttribute("data-aos", "fade-up");
+        div.innerHTML = `<h3>${item.judul}</h3><p>${item.isi}</p>`;
+        container.appendChild(div);
+      });
+    }
+
+    // Jadwal
+    async function fetchJadwal() {
+      const { data } = await supabase.from('jadwal').select('*').order('tanggal', { ascending: true });
+      const container = document.getElementById('jadwal-list');
+      data.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${item.tanggal}</strong>: ${item.kegiatan}`;
+        li.setAttribute("data-aos", "fade-up");
+        container.appendChild(li);
+      });
+    }
+
+    fetchGaleri();
+    fetchBerita();
+    fetchJadwal();
   </script>
-  <script type="module" src="index.js"></script>
 </body>
 </html>
