@@ -8,40 +8,71 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Oshibase48</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav class="site-nav" id="site-nav">
       <a href="index.html">Beranda</a>
       <a href="about.html">Tentang</a>
+      <a href="galeri.html">Galeri</a>
       <a href="berita.html">Berita</a>
       <a href="jadwal.html">Jadwal</a>
     </nav>
   </header>
 
+  <!-- Galeri -->
   <section class="section galeri" data-aos="fade-up">
     <div class="container">
       <h1>Galeri Komunitas</h1>
-      <div class="gallery-grid" id="galeri-list"></div>
+      <div class="gallery-grid" id="galeri-list">
+        <!-- Gambar dari Supabase akan muncul di sini -->
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-logo">Oshibase48</div>
     <div class="sosmed">
-      <a href="https://instagram.com/oshibase48._">Instagram</a> |
-      <a href="https://tiktok.com/@oshibase48ofc">TikTok</a>
+      <a href="https://instagram.com/oshibase48._" target="_blank">Instagram</a> |
+      <a href="https://tiktok.com/@oshibase48ofc" target="_blank">TikTok</a>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <script src="galeri.js"></script>
-  <script>AOS.init();</script>
   <script>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
+    AOS.init();
+    function toggleMenu() {
       document.getElementById('site-nav').classList.toggle('active');
-    });
+    }
+
+    // Supabase init
+    const supabaseUrl = 'https://nuvfnnxuxtthbryesliu.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51dmZubnh1eHR0aGJyeWVzbGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1Mzk1NTYsImV4cCI6MjA2NzExNTU1Nn0.Om73FRiKvdlWpZS-hIXCIKznjkQ3A3X3k1n2IzGzRes';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Fetch galeri
+    async function fetchGaleri() {
+      const { data, error } = await supabase.from('galeri').select('*').order('created_at', { ascending: false });
+
+      if (error) {
+        document.getElementById('galeri-list').innerHTML = '<p>Gagal memuat galeri.</p>';
+        return;
+      }
+
+      const container = document.getElementById('galeri-list');
+      data.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.url; // pastikan kolom url menyimpan link gambar
+        img.alt = item.caption || 'Galeri';
+        container.appendChild(img);
+      });
+    }
+
+    fetchGaleri();
   </script>
 </body>
 </html>
