@@ -1,71 +1,58 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Oshibase48 - Komunitas Wota</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <style>
-    /* Fix Logo gepeng */
-    .hero .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 15px;
-    }
-
-    /* Tambahan padding di bawah agar footer tidak ketutupan */
-    body {
-      padding-bottom: 100px;
-    }
-
-    footer {
-      position: relative;
-      background: #1e3a8a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
 <body>
-  <!-- Hero / Perkenalan -->
+  <!-- HERO / LOGO -->
   <header class="hero" data-aos="fade-down">
-    <img src="assets/img/oshibase-logo.png" alt="Logo OSHIBASE48" class="logo">
+    <img src="assets/img/oshibase-logo.png" alt="Logo OSHIBASE48" class="logo" />
     <h1>Selamat Datang di OSHIBASE48</h1>
     <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
   </header>
 
-  <!-- Section Galeri -->
+  <!-- 💡 PERKENALAN KOMUNITAS -->
+  <section class="section intro" data-aos="fade-up">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
+      <div style="flex: 1 1 300px;">
+        <img src="assets/img/oshimen-hero.jpg" alt="Komunitas Wota OSHIBASE48" style="width: 100%; border-radius: 12px;" />
+      </div>
+      <div style="flex: 1 1 300px;">
+        <h2>Tentang OSHIBASE48</h2>
+        <p>
+          OSHIBASE48 adalah komunitas wota yang berdedikasi untuk mendukung JKT48 dan para oshimen tercinta.
+          Kami menyediakan ruang bagi para fans untuk berbagi foto, berita terbaru, dan jadwal event komunitas.
+        </p>
+        <p>
+          Bergabunglah bersama kami dan jadi bagian dari gerakan positif dalam dunia per-wota-an Indonesia!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
   <section class="section" id="galeri" data-aos="fade-up">
     <h2>Galeri Komunitas</h2>
     <div id="galeri-preview" class="grid"></div>
     <a href="pages/galeri.html" class="btn">Lihat Semua Galeri</a>
   </section>
 
-  <!-- Section Berita -->
+  <!-- BERITA -->
   <section class="section" id="berita" data-aos="fade-up">
     <h2>Berita Terbaru</h2>
     <div id="berita-preview" class="grid"></div>
     <a href="pages/berita.html" class="btn">Lihat Semua Berita</a>
   </section>
 
-  <!-- Section Jadwal -->
+  <!-- JADWAL -->
   <section class="section" id="jadwal" data-aos="fade-up">
     <h2>Jadwal JKT48 & Event</h2>
     <div id="jadwal-preview" class="grid"></div>
     <a href="pages/jadwal.html" class="btn">Lihat Semua Jadwal</a>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer data-aos="fade-up">
     <p>&copy; 2025 OSHIBASE48 Community</p>
   </footer>
 
-  <!-- Script AOS + JS -->
+  <!-- AOS JS + INIT -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="assets/js/index.js"></script>
   <script>AOS.init();</script>
 </body>
-</html>
