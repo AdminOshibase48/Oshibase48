@@ -100,26 +100,16 @@ footer {
   color: #6b7280;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: white;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
+//* Toggle style saat menu aktif */
+#navMenu {
+  display: none;
+  flex-direction: column;
+}
+#navMenu.active {
+  display: flex;
+}
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
 }
