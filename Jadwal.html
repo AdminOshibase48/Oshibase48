@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jadwal Oshibase48</title>
+  <title>Jadwal Komunitas</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
-  <header>
-    <h1 class="logo">Oshibase48</h1>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="about.html">Tentang</a></li>
-        <li><a href="galeri.html">Galeri</a></li>
-        <li><a href="berita.html">Berita</a></li>
-      </ul>
+  <header class="site-header">
+    <div class="logo">Oshibase48</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html">Beranda</a>
+      <a href="about.html">Tentang</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="berita.html">Berita</a>
     </nav>
   </header>
 
-  <section class="jadwal" data-aos="fade-up">
-    <h2>Jadwal Acara & Event</h2>
-    <ul id="jadwal-list" class="jadwal-list"></ul>
+  <section class="section jadwal" data-aos="fade-up">
+    <div class="container">
+      <h1>Jadwal Kegiatan</h1>
+      <ul id="jadwal-list" class="jadwal-list"></ul>
+    </div>
   </section>
 
   <footer>
     <div class="footer-logo">Oshibase48</div>
     <div class="sosmed">
       <a href="https://instagram.com/oshibase48._">Instagram</a> |
-      <a href="https://www.tiktok.com/@oshibase48ofc">TikTok</a>
+      <a href="https://tiktok.com/@oshibase48ofc">TikTok</a>
     </div>
   </footer>
 
@@ -37,5 +38,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="jadwal.js"></script>
   <script>AOS.init();</script>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('site-nav').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
