@@ -3,163 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OSHIBASE48 - Home</title>
+  <title>OSHIBASE48 - Komunitas Wota</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ecf5ff;
-      color: #333;
-    }
-
-    header {
-      background-color: #3b82f6;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .hamburger {
-      font-size: 24px;
-      cursor: pointer;
-      display: block;
-    }
-
-    nav {
-      background: #ffffff;
-      display: none;
-      flex-direction: column;
-      padding: 10px 20px;
-      border-bottom: 2px solid #d1e7ff;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #1e3a8a;
-      margin: 10px 0;
-      font-weight: 500;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: url('https://i.ibb.co/2KgdXb5/bg-oshis.jpg') no-repeat center;
-      background-size: cover;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: auto;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .section h2 {
-      text-align: center;
-      color: #1d4ed8;
-    }
-
-    footer {
-      background-color: #1e3a8a;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    footer a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    @media (min-width: 768px) {
-      .hamburger {
-        display: none;
-      }
-      nav {
-        display: flex !important;
-        flex-direction: row;
-        justify-content: center;
-        background: transparent;
-        border: none;
-      }
-      nav a {
-        margin: 0 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
 
+  <!-- Navbar -->
   <header>
     <div class="logo">
-     <img src="assets/img/logo.png" alt="OSHIBASE48 Logo" style="height: 60px;" />
-      <strong>OSHIBASE48</strong>
+      <img src="assets/img/logo.png" alt="OSHIBASE48 Logo">
     </div>
-    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="navLinks">
+      <a href="#galeri">Galeri</a>
+      <a href="#berita">Berita</a>
+      <a href="#jadwal">Jadwal</a>
+    </nav>
   </header>
 
-  <nav id="mobileMenu">
-    <a href="galeri.html">Galeri</a>
-    <a href="berita.html">Berita</a>
-    <a href="jadwal.html">Jadwal</a>
-  </nav>
-
-  <section class="hero">
+  <!-- Welcome Section -->
+  <section class="welcome" data-aos="fade-up">
     <h1>Selamat Datang di OSHIBASE48</h1>
-    <p>Komunitas wota yang seru, kreatif, dan selalu mendukung oshimen tercinta! Bergabung dan tunjukkan semangatmu!</p>
+    <p>Rumah bagi para wota untuk berbagi, berdiskusi, dan mendukung oshimen tercinta bersama-sama.</p>
   </section>
 
-  <section class="section">
-    <h2>Apa itu OSHIBASE48?</h2>
-    <p style="text-align:center;">OSHIBASE48 adalah rumah bagi para fans JKT48 untuk saling terhubung, berbagi konten, dan menyebarkan energi positif lewat kegiatan komunitas. Kita punya galeri, berita update, dan jadwal kegiatan favoritmu!</p>
+  <!-- Galeri -->
+  <section class="section" id="galeri" data-aos="fade-up">
+    <h2>Galeri Komunitas</h2>
+    <p>Dokumentasi foto-foto kegiatan seru komunitas OSHIBASE48</p>
   </section>
 
-<footer>
-  <p>© 2025 OSHIBASE48</p>
-  <a href="https://www.instagram.com/oshibase48._/" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-  <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank">
-    <i class="fab fa-tiktok"></i> TikTok
-  </a>
-  <a href="https://oshibase48.netlify.app/" target="_blank">
-    <i class="fas fa-globe"></i> Website
-  </a>
-</footer>
+  <!-- Berita -->
+  <section class="section" id="berita" data-aos="fade-up">
+    <h2>Berita Komunitas</h2>
+    <p>Informasi dan pengumuman terbaru seputar komunitas kami.</p>
+  </section>
 
+  <!-- Jadwal -->
+  <section class="section" id="jadwal" data-aos="fade-up">
+    <h2>Jadwal JKT48</h2>
+    <p>Jangan lewatkan jadwal event penting dari JKT48 dan OSHIBASE48!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 OSHIBASE48</p>
+    <div class="social">
+      <a href="https://www.instagram.com/oshibase48._/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@oshibase48ofc" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://oshibase48.netlify.app/" target="_blank">
+        <i class="fas fa-globe"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init();
+
     function toggleMenu() {
-      const nav = document.getElementById('mobileMenu');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
     }
   </script>
-
 </body>
 </html>
