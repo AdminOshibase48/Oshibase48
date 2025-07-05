@@ -1,77 +1,15 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tentang Oshibase48</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-  <style>
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-container img {
-      height: 32px;
-    }
-    footer img.footer-logo-img {
-      height: 32px;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="logo-container">
-      <img src="assets/img/logo.png" alt="Logo Oshibase48" />
-      <div class="logo">Oshibase48</div>
+<section class="section about" id="about" data-aos="fade-up">
+  <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+    <!-- Gambar kiri -->
+    <div style="flex: 1; min-width: 250px;">
+      <img src="assets/img/perkenalan.png" alt="Oshibase48 Pixel" style="width: 100%; border-radius: 12px;" />
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav class="site-nav" id="site-nav">
-      <a href="index.html">Beranda</a>
-      <a href="about.html">Tentang</a>
-      <a href="galeri.html">Galeri</a>
-      <a href="berita.html">Berita</a>
-      <a href="jadwal.html">Jadwal</a>
-    </nav>
-  </header>
 
-  <!-- Konten -->
-  <section class="section about" data-aos="fade-up">
-    <div class="container">
-      <h1>Tentang Kami</h1>
-      <img src="assets/img/perkenalan.png" alt="Oshibase48 Banner" style="width:100%; border-radius:12px; margin-top:20px;">
-  </section>
-      <p>
-        Oshibase48 adalah komunitas yang menjadi rumah bagi para wota JKT48 untuk berbagi cerita,
-        berdiskusi, dan mendukung oshimen tercinta dalam suasana kekeluargaan dan semangat positif.
-      </p>
-      <p>
-        Kami percaya bahwa fandom bukan hanya soal idola, tapi juga soal persahabatan, kebersamaan,
-        dan momen-momen yang tak terlupakan bersama sesama penggemar.
-      </p>
+    <!-- Teks kanan -->
+    <div style="flex: 2; min-width: 250px;">
+      <h1 style="margin-top: 0;">Tentang Kami</h1>
+      <p>Oshibase48 adalah komunitas yang menjadi rumah bagi para wota JKT48 untuk berbagi cerita, berdiskusi, dan mendukung oshimen tercinta dalam suasana kekeluargaan dan semangat positif.</p>
+      <p>Kami percaya bahwa fandom bukan hanya soal idola, tapi juga soal persahabatan, kebersamaan, dan momen-momen yang tak terlupakan bersama sesama penggemar.</p>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-logo">Oshibase48</div>
-    <img src="assets/img/logo.png" alt="Logo Footer" class="footer-logo-img" />
-    <div class="sosmed">
-      <a href="https://instagram.com/oshibase48._" target="_blank">Instagram</a> |
-      <a href="https://tiktok.com/@oshibase48ofc" target="_blank">TikTok</a>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    function toggleMenu() {
-      document.getElementById('site-nav').classList.toggle('active');
-    }
-  </script>
-</body>
-</html>
+  </div>
+</section>
