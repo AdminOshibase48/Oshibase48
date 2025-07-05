@@ -6,11 +6,28 @@
   <title>Tentang Oshibase48</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <style>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 32px;
+    }
+    footer img.footer-logo-img {
+      height: 32px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
-    <div class="logo">Oshibase48</div>
+    <div class="logo-container">
+      <img src="assets/img/logo.png" alt="Logo Oshibase48" />
+      <div class="logo">Oshibase48</div>
+    </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <nav class="site-nav" id="site-nav">
       <a href="index.html">Beranda</a>
@@ -39,6 +56,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-logo">Oshibase48</div>
+    <img src="assets/img/logo.png" alt="Logo Footer" class="footer-logo-img" />
     <div class="sosmed">
       <a href="https://instagram.com/oshibase48._" target="_blank">Instagram</a> |
       <a href="https://tiktok.com/@oshibase48ofc" target="_blank">TikTok</a>
